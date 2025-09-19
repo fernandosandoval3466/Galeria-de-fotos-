@@ -1,0 +1,10 @@
+{
+  "name": "tienda-online-fsg",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {
+      "enabled": false
+    }
+  },
+  "type": "angular"
+}

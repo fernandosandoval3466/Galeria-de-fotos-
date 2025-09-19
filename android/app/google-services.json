@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "78037822091",
+    "project_id": "tiendaonlinefsg",
+    "storage_bucket": "tiendaonlinefsg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78037822091:android:3113b08d9b79f39718028e",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78037822091-prjd2sh9vjv8d5jv4d0vg1132h4se0hh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.application",
+            "certificate_hash": "39ac61fb564ed77968da2fcda02aa8e9eee35a38"
+          }
+        },
+        {
+          "client_id": "78037822091-ojv6re8ap5nu2erq5rt5vuc11fn8i84q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4mtZqf5rWol7WGQo9DW1vFo5R1kZfylw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78037822091-ojv6re8ap5nu2erq5rt5vuc11fn8i84q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

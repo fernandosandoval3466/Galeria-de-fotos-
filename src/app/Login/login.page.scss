@@ -1,0 +1,65 @@
+.center-page {
+    --padding-top: 0;
+    --padding-bottom: 0;
+}
+
+.center-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centra horizontal */
+    justify-content: center;
+    /* centra vertical */
+    gap: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.center-container ion-item {
+    width: 100%;
+    max-width: 420px;
+    /* ajustar según preferencia */
+}
+
+
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-btn ion-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    --ionicon-stroke-width: 0;
+}
+
+/* Estilos para el botón de Google */
+.google-btn{
+    --background: #ffffff;
+    --color: #000000;
+    border: 1px solid #dddddd;
+
+}
+
+.Email {
+    --padding-start: 10px;
+    --padding-end: 10px;
+}
+
+.Email::part(native) {
+    font-size: 14px;
+}
+
+.Password {
+    --padding-start: 10px;
+    --padding-end: 10px;
+}
+
+
+
+
