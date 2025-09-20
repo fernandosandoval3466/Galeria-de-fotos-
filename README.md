@@ -44,7 +44,7 @@ Próximamente se agregarán las siguientes funciones:
 https://github.com/fernandosandoval3466/Galeria-de-fotos-.git
 
 
-#Cómo instalar:
+# Cómo instalar:
 Paso 1: Al ingresar al repositorio de GitHub dará una opción para descargar el proyecto en un archivo comprimido.
 Paso 2: Una vez descargado el proyecto, se descomprime y se abre el proyecto en VS code o el editor de código de preferencia desde la carpeta raíz del mismo.
 Paso 3: Una vez abierto el proyecto, se abre la terminal (ctrl+ñ) y se ingresa el siguiente comando: ionic serve.
