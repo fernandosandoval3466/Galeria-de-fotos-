@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Carrito de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="(cartItems$ | async)?.length; else emptyCart">
+    <ion-item *ngFor="let item of cartItems$ | async">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="item.product.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.product.name }}</h2>
+        <p>Precio unitario: COP {{ item.product.price | number:'1.2-2' }}</p>
+        <p>Subtotal: COP {{ (item.product.price * item.quantity) | number:'1.2-2' }}</p>
+      </ion-label>
+      <ion-input type="number" slot="end" [value]="item.quantity" min="1" (ionChange)="updateQuantity(item, $event.detail.value)" class="quantity-input"></ion-input>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="removeItem(item.product.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #emptyCart>
+    <ion-text class="ion-text-center ion-padding">
+      <p>Tu carrito está vacío</p>
+    </ion-text>
+  </ng-template>
+
+  <ion-footer *ngIf="(cartItems$ | async)?.length">
+    <ion-toolbar>
+      <ion-title slot="start">Total: COP {{ total$ | async | number:'1.2-2' }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button color="danger" (click)="clearCart()">Vaciar Carrito</ion-button>
+        <ion-button color="primary" (click)="onBuy()">Comprar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

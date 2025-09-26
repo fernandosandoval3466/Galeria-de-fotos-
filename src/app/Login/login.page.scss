@@ -1,7 +1,7 @@
 .center-page {
     --padding-top: 0;
     --padding-bottom: 0;
-}
+    }
 
 .center-container {
     height: 100%;
@@ -15,6 +15,7 @@
     padding: 16px;
     box-sizing: border-box;
     width: 100%;
+    margin-top: 5vh; /* Empuja el formulario hacia abajo para mejor centrado visual */
 }
 
 .center-container ion-item {
@@ -23,9 +24,32 @@
     /* ajustar según preferencia */
 }
 
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 24px;
+    color: #0199c7;
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px; /* Espacio debajo del logo */
+}
 
+.logo-container ion-img {
+    width: 60px; /* Reducir el tamaño del logo */
+    height: auto;
+    max-width: 100%; /* Asegurar que no se desborde */
+}
 
-.google-btn {
+google-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +67,6 @@
     --background: #ffffff;
     --color: #000000;
     border: 1px solid #dddddd;
-
 }
 
 .Email {
@@ -58,6 +81,34 @@
 .Password {
     --padding-start: 10px;
     --padding-end: 10px;
+}
+
+/* Estilos para campos con error */
+.error-message {
+    color: var(--ion-color-danger, #f1453d);
+    font-size: 12px;
+    padding: 4px 16px;
+    width: 100%;
+    max-width: 420px;
+    text-align: left;
+}
+
+ion-input.error {
+    --border-color: var(--ion-color-danger, #f1453d);
+    --border-width: 1px;
+    --border-style: solid;
+}
+
+/* Estilos para botones deshabilitados */
+ion-button[disabled] {
+    opacity: 0.6;
+}
+
+/* Estilos para el spinner en botones */
+ion-button ion-spinner {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
 }
 
 

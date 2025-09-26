@@ -11,6 +11,7 @@ import {GooglePlus} from '@ionic-native/google-plus/ngx';
 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,9 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     storageBucket: "tiendaonlinefsg.firebasestorage.app", 
     apiKey: "AIzaSyBRb-E4oxE7ziR2ZoTcJyp9A8oPAtFcMfU", 
     authDomain: "tiendaonlinefsg.firebaseapp.com", 
-    messagingSenderId: "78037822091" })), provideAuth(() => getAuth())],
+    messagingSenderId: "78037822091" })),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

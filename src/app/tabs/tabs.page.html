@@ -1,3 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tienda Online</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onAuthAction()">
+        <ion-text *ngIf="!(isLoggedIn$ | async)">Login</ion-text>
+        <ion-text *ngIf="isLoggedIn$ | async">Logout</ion-text>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
@@ -8,7 +20,12 @@
 
     <ion-tab-button tab="tab1" href="/tabs/tab1">
       <ion-icon aria-hidden="true" name="image-outline"></ion-icon>
-      <ion-label>Fotos</ion-label>
+      <ion-label>Productos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" href="/tabs/tab2">
+      <ion-icon aria-hidden="true" name="bag-outline"></ion-icon>
+      <ion-label>Carrito</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 

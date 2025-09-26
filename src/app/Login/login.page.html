@@ -1,41 +1,67 @@
 <ion-header [translucent]="true">
-
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-    
+<ion-content [fullscreen]="true">
+
     <ion-header collapse="condense">
         <ion-toolbar class="header-title">
             <ion-title size="large">Usuario</ion-title>
         </ion-toolbar>
     </ion-header>
 
-        <form group="loginForm" class="login-form">
+    <form [formGroup]="loginForm" class="login-form">
+        <div class="center-container">
+            <div class="logo-container">
+                <img src="assets/icon/Softwatch.png" alt="Logo" class="img" width="150" height="150">
 
+            </div>
+            <div class="tille-container">
+                <h1 class="title">Bienvenid@!</h1>
+            </div>
+            <ion-item>
+                <ion-icon name="person-circle" slot="start"></ion-icon>
+                <ion-input formControlName="email" type="email" placeholder="example@gmail.com"
+                    [class.error]="isFieldInvalid('email')">
+                </ion-input>
+            </ion-item>
+            <div class="error-message" *ngIf="isFieldInvalid('email')">
+                {{ getFieldError('email') }}
+            </div>
+
+            <ion-item>
+                <ion-icon name="lock-closed" slot="start"></ion-icon>
+                <ion-input formControlName="password" type="password" placeholder="Contraseña"
+                    [class.error]="isFieldInvalid('password')">
+                </ion-input>
+                <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-item>
+            <div class="error-message" *ngIf="isFieldInvalid('password')">
+                {{ getFieldError('password') }}
+            </div>
+
+            <ion-button expand="block" color="primary" class="ion-margin-top" (click)="onLogin()"
+                [disabled]="isLoading">
+                <span *ngIf="!isLoading">Iniciar sesión</span>
+                <ion-spinner *ngIf="isLoading" name="crescent" slot="start"></ion-spinner>
+            </ion-button>
+
+            <ion-button expand="block" fill="outline" color="secondary" (click)="onRegister()" [disabled]="isLoading">
+                <span *ngIf="!isLoading">Registrarse</span>
+                <ion-spinner *ngIf="isLoading" name="crescent" slot="start"></ion-spinner>
+            </ion-button>
+
+            <ion-button expand="block" fill="clear" color="tertiary" (click)="onForgotPassword()"
+                [disabled]="isLoading">
+                ¿Olvidaste tu contraseña?
+            </ion-button>
+
+            <ion-text class="ion-text-center ion-margin-top ion-padding" color="medium">O inicia sesión con</ion-text>
+            <ion-button expand="block" fill="primary" color="white" class="google-btn" (click)="onGoogleLogin()"
+                [disabled]="isLoading">
+                <ion-icon slot="start" src="assets/Google__G__logo.svg" aria-hidden="true"></ion-icon>
+                Iniciar sesión con Google
+            </ion-button>
+        </div>
     </form>
 
-
-    <div class="center-container">
-
-        <ion-item>
-            <ion-icon name="person-circle" slot="start"></ion-icon>
-            <ion-textarea placeholder="example@gmail.com" class="Email"></ion-textarea>
-        </ion-item>
-        <ion-item>
-            <ion-icon name="lock-closed" slot="start"></ion-icon>
-            <ion-input type="password" value="********" class="Password">
-                <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-            </ion-input>
-        </ion-item>
-
-        <ion-button expand="block" color="primary" class="ion-margin-top">Iniciar sesión</ion-button>
-        <ion-button expand="block" fill="outline" color="secondary">Registrarse</ion-button>
-        <ion-button expand="block" fill="clear" color="tertiary">¿Olvidaste tu contraseña?</ion-button>
-
-        <ion-text class="ion-text-center ion-margin-top ion-padding" color="medium">O inicia sesión con</ion-text>
-        <ion-button expand="block" fill="primary" color="white" class="google-btn">
-            <ion-icon slot="start" src="assets/Google__G__logo.svg" aria-hidden="true"></ion-icon>
-            Iniciar sesión con Google</ion-button>
-    </div>
-
-</ion-cont
+</ion-content>

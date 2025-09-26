@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tabs',
@@ -6,8 +10,25 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss'],
   standalone: false,
 })
-export class TabsPage {
+export class TabsPage implements OnInit {
 
-  constructor() {}
+  isLoggedIn$!: Observable<boolean>;
 
+  constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    this.isLoggedIn$ = this.authService.getCurrentUser().pipe(
+      map(user => !!user)
+    );
+  }
+
+  onAuthAction() {
+    this.isLoggedIn$.subscribe(isLoggedIn => {
+      if (isLoggedIn) {
+        this.authService.logout();
+      } else {
+        this.router.navigate(['/login']);
+      }
+    });
+  }
 }
