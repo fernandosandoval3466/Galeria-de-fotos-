@@ -1,51 +1,124 @@
-# Galería de imágenes.
-## Introducción.
-En este proyecto se desarrolla una galería de fotos utilizando Ionic y Angular, tomando como base el tutorial proporcionado en la actividad(.
-El enfoque principal es mostrar cómo se pueden integrar las funcionalidades nativas del dispositivo móvil dentro de una aplicación híbrida.
-Para la galería se hace uso de la cámara del dispositivo y del almacenamiento interno, de manera que el usuario pueda capturar imágenes, guardarlas y visualizarlas directamente desde la aplicación.
-Gracias a las capacidades de Ionic con Capacitor, se logra acceder a la cámara y gestionar las fotos de forma sencilla, creando una experiencia cercana a las aplicaciones móviles nativas, pero con la ventaja del desarrollo multiplataforma.
+# Implementación de Login - Estado del Proyecto
 
-##Herramientas 🔨:
-Dentro de las utilidades que se emplearon para realizar la actividad se encuentran las siguientes:
-### Software:
-1. Visual Studio Code: Editor de código
-2. GitHub: Almacenar el proyecto en la nube.
-3. Ionic: Crear el proyecto.
-4. Capacitor y Firebase: Acceso a los plugins necesarios.
-###Lenguajes de programación:
-- Angular.
-- TypeScript.
-- Ionic.
-- SCSS.
-##Plugins.
-En el desarrollo del proyecto se utilizaron los siguientes plugins que permiten el uso de la cámara, el almacenamiento y acceso a las imágenes desde el navegador provenientes de Capacitor:
-1. @Capacitor/pwa-elements:
-Es el plugin más importante ya que, es el que permite la utilización de los demás que se comentarán a continuación, por tal motivo es el primero que debe instalarse en el proyecto.
-2. @Capacitor/camera:
-Este plugin ofrece la oportunidad de utilizar la cámara de un dispositivo, ya sea en móvil o en un navegador.
-3. @Capacitor/Storage:
-Aunque este plugin se considera obsoleto en la actualidad tecnológica, es vital para almacenar las fotos o imágenes que se carguen en el aplicativo de forma local.
-4. @Capacitor/FileSystem:
-Este último plugin que se enfoca en almacenamiento del dispositivo, consiste en gestionar los archivos del dispositivo, en este caso únicamente funciona en la aplicación web.
-5. Autenticación de google con Firebase:
-Esta plataforma permite que el usuario se loguee en el aplicativo, tanto en web como en android. Cabe aclarar que esta función se ha intentado implementar, pero debido a algunas complicaciones en el backend únicamente se encontrará el front del formulario. Próximamente se añadirá.
-##Desarrollo de la aplicación 🤖:
-Este proyecto cuenta con el desarrollo del tutorial proporcionado ([Tutorial](http://https://www.youtube.com/watch?v=Vo8-d2f2dTg "Tutorial")) y cuenta con las siguientes funcionalidades:
-a. Inicio de sesión con correo electrónico y contraseña.
-b. Inicio de sesión con Google.
-c. Botones de registro y autenticación.
-d. Galería de imágenes en el cual el usuario tiene la oportunidad de tomar una cantidad ilimitada de fotos y cargar una imagen del almacenamiento del dispositivo (web) y así mismo almacenar en la aplicación las que desee.
-Próximamente se agregarán las siguientes funciones:
-1- Editar o eliminar una imagen almacenada.
-2- Autenticación de inicio de sesión con Google
-3- Inicio de sesión con correo electrónico y contraseña.
+## ✅ Completado
 
-# Repositorio de GitHub:
-https://github.com/fernandosandoval3466/Galeria-de-fotos-.git
+### 1. AuthService (`tienda-online-fsg/src/app/services/auth.service.ts`)
+- ✅ Métodos de autenticación con Firebase:
+  - `loginWithEmail(email, password)` - Login con email/contraseña
+  - `registerWithEmail(email, password)` - Registro de nuevos usuarios
+  - `loginWithGoogle()` - Login con Google (web)
+  - `resetPassword(email)` - Restablecimiento de contraseña por email
+  - `logout()` - Cierre de sesión
+  - `getCurrentUser()` - Observable del usuario actual
+  - `isLoggedIn()` - Verificar si hay sesión activa
+- ✅ Manejo de errores personalizado para diferentes tipos de error de Firebase
+- ✅ Integración con Router para navegación automática
+- ✅ Soporte para login con Google en web y móvil
+- ✅ Funcionalidad completa de restablecimiento de contraseña
 
+### 2. Login Component (`tienda-online-fsg/src/app/Login/login.page.ts`)
+- ✅ Formulario reactivo con validaciones:
+  - Email: requerido y formato válido
+  - Contraseña: requerida y mínimo 6 caracteres
+- ✅ Métodos de interacción:
+  - `onLogin()` - Iniciar sesión
+  - `onRegister()` - Registrar nuevo usuario
+  - `onGoogleLogin()` - Placeholder para login con Google
+- ✅ Estados de carga y manejo de errores
+- ✅ Alertas informativas para el usuario
+- ✅ Navegación automática después del login/registro
 
-# Cómo instalar:
-Paso 1: Al ingresar al repositorio de GitHub dará una opción para descargar el proyecto en un archivo comprimido.
-Paso 2: Una vez descargado el proyecto, se descomprime y se abre el proyecto en VS code o el editor de código de preferencia desde la carpeta raíz del mismo.
-Paso 3: Una vez abierto el proyecto, se abre la terminal (ctrl+ñ) y se ingresa el siguiente comando: ionic serve.
+### 3. Template HTML (`tienda-online-fsg/src/app/Login/login.page.html`)
+- ✅ Formulario conectado con FormGroup
+- ✅ Validación visual en tiempo real
+- ✅ Mensajes de error específicos
+- ✅ Estados de carga en botones
+- ✅ Toggle para mostrar/ocultar contraseña
+- ✅ Botones deshabilitados durante carga
+
+### 4. Estilos CSS (`tienda-online-fsg/src/app/Login/login.page.scss`)
+- ✅ Estilos para mensajes de error
+- ✅ Indicadores visuales de campos inválidos
+- ✅ Estilos para estados de carga
+- ✅ Diseño responsivo
+
+### 5. Configuración del Módulo (`tienda-online-fsg/src/app/Login/login.module.ts`)
+- ✅ Importación de ReactiveFormsModule
+- ✅ Configuración correcta de dependencias
+
+## 🔧 Características Implementadas
+
+### Validaciones
+- Email: formato válido y requerido
+- Contraseña: mínimo 6 caracteres y requerida
+- Validación en tiempo real con feedback visual
+
+### Experiencia de Usuario
+- Loading spinners durante operaciones
+- Alertas informativas para éxito/error
+- Navegación automática después del login
+- Mensajes de error específicos en español
+- **Modal de "¿Olvidaste tu contraseña?"** con input de email
+- Pre-llenado automático del email del formulario
+
+### Seguridad
+- Manejo seguro de errores de Firebase
+- Validación de formularios antes del envío
+- Sanitización de errores para el usuario
+- Manejo de errores específicos para restablecimiento de contraseña
+
+### Funcionalidad de Restablecimiento de Contraseña
+- ✅ Método `resetPassword(email)` en AuthService
+- ✅ Modal interactivo para ingresar email
+- ✅ Estados de carga durante el envío
+- ✅ Mensajes de confirmación y error
+- ✅ Manejo de errores de red y rate limiting
+
+### Sistema de Protección de Rutas (AuthGuard)
+- ✅ AuthGuard (`tienda-online-fsg/src/app/services/auth.guard.ts`)
+- ✅ Protección de rutas con `canActivate`
+- ✅ Redirección automática a login para usuarios no autenticados
+- ✅ Integración con observable de usuario actual
+- ✅ Aplicado a rutas protegidas (tab1: Fotos)
+
+## 🚀 Próximos Pasos Sugeridos
+
+1. **Agregar persistencia de sesión**
+2. **Implementar logout en el menú principal**
+3. **Agregar login con Google para móviles (nativo)**
+4. **Crear página de perfil de usuario**
+5. **Mejorar la experiencia de usuario en tabs protegidos**
+
+## 🧪 Para Probar
+
+1. Ejecutar la aplicación: `ionic serve`
+2. Navegar a la página de login
+3. Probar registro con email/contraseña válidos
+4. Probar login con las credenciales registradas
+5. Verificar navegación automática después del login
+
+### 🆕 Probar Funcionalidad "¿Olvidaste tu contraseña?"
+
+6. **Hacer clic en "¿Olvidaste tu contraseña?"**
+7. **Verificar que se abre un modal** con input de email
+8. **Ingresar un email válido** y hacer clic en "Enviar"
+9. **Verificar que aparece loading** durante el envío
+10. **Confirmar que se muestra mensaje de éxito** después del envío
+11. **Verificar que se puede cancelar** la operación
+12. **Probar con email inválido** y verificar validación
+
+### 🆕 Probar Sistema de Protección de Rutas (AuthGuard)
+
+13. **Sin iniciar sesión, intentar acceder directamente a `/tabs/tab1`**
+14. **Verificar que se redirige automáticamente** a `/tabs/tab4` (login)
+15. **Iniciar sesión correctamente** con email/contraseña
+16. **Verificar que después del login** se puede acceder a `/tabs/tab1`
+17. **Cerrar sesión y verificar** que se redirige nuevamente a login
+
+## 📝 Notas
+
+- El proyecto ya tiene Firebase configurado
+- Los usuarios se registran automáticamente en Firebase Auth
+- La navegación redirige a `/tabs` después del login exitoso
+- Los errores se muestran en español para mejor UX
 
