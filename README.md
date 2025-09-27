@@ -218,5 +218,5 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## Contenido adicional 
  
-Dentro de los archivos se encontrará el ejecutable para android que está denominado "Tienda-Online-FSG"
+Dentro de los archivos se encontrará el ejecutable para android que está denominado "Tienda-Online-FSG.apk"
 
