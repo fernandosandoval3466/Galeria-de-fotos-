@@ -216,3 +216,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 - **Fernando Sandoval García**: Estudiante de la Fundación Universitaria UCompensar - Semestre 7 - Desarrollo de Apps Híbridas
 
+## Contenido adicional 
+ 
+Dentro de los archivos se encontrará el ejecutable para android que está denominado "Tienda-Online-FSG"
+
